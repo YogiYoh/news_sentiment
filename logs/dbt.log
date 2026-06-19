@@ -1,0 +1,81 @@
+[0m14:20:43.264860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c7122df8680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71234031a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71231a3e60>]}
+
+
+============================== 14:20:43.315582 | de3018b9-5639-423b-bfd4-af0cbfecac17 ==============================
+[0m14:20:43.315582 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:20:43.316379 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'invocation_command': 'dbt init', 'partial_parse': 'True', 'profiles_dir': '/home/yogiyoh/.dbt', 'version_check': 'True', 'empty': 'None', 'debug': 'False', 'use_colors': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'log_path': 'logs', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'target_path': 'None', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'use_experimental_parser': 'False'}
+[0m14:21:16.214523 [debug] [MainThread]: Starter project path: /mnt/c/Users/15108/Downloads/news/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m14:21:16.416075 [info ] [MainThread]: 
+Your new dbt project "news_sentiment" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:21:16.416867 [info ] [MainThread]: Setting up your profile.
+[0m14:21:25.384873 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:21:25.385758 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:21:25.386438 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:23:41.259824 [info ] [MainThread]: Profile news_sentiment written to /home/yogiyoh/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:23:41.261196 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 178.04317, "process_in_blocks": "57882", "process_kernel_time": 2.468314, "process_mem_max_rss": "140936", "process_out_blocks": "11856", "process_user_time": 4.273051}
+[0m14:23:41.262096 [debug] [MainThread]: Command `dbt init` succeeded at 14:23:41.261997 after 178.04 seconds
+[0m14:23:41.262669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c71250dc770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c7120c97bc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c7122099370>]}
+[0m14:23:41.263237 [debug] [MainThread]: Flushing usage events
+[0m14:23:41.672908 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:23:57.961566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705050a97740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70504fefc860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705051c191f0>]}
+
+
+============================== 14:23:57.969246 | 391bfebd-2398-4f13-83c5-7323590c0b9c ==============================
+[0m14:23:57.969246 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:23:57.969985 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/yogiyoh/.dbt', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'quiet': 'False', 'log_format': 'default', 'fail_fast': 'False', 'write_json': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_path': 'logs', 'empty': 'None', 'indirect_selection': 'eager', 'debug': 'False', 'no_print': 'None', 'version_check': 'True', 'static_parser': 'True', 'use_colors': 'True', 'introspect': 'True', 'warn_error': 'None', 'invocation_command': 'dbt debug'}
+[0m14:23:58.133805 [info ] [MainThread]: dbt version: 1.11.11
+[0m14:23:58.134530 [info ] [MainThread]: python version: 3.12.13
+[0m14:23:58.135075 [info ] [MainThread]: python path: /mnt/c/Users/15108/Downloads/news/.venv/bin/python3
+[0m14:23:58.135651 [info ] [MainThread]: os info: Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:24:00.822661 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:24:00.823430 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:24:00.824024 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:24:01.065312 [info ] [MainThread]: Using profiles dir at /home/yogiyoh/.dbt
+[0m14:24:01.066176 [info ] [MainThread]: Using profiles.yml file at /home/yogiyoh/.dbt/profiles.yml
+[0m14:24:01.066771 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/15108/Downloads/news/dbt_project.yml
+[0m14:24:01.067372 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:24:01.068277 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 3.1524427, "process_in_blocks": "41665", "process_kernel_time": 1.225445, "process_mem_max_rss": "127940", "process_out_blocks": "0", "process_user_time": 1.594351}
+[0m14:24:01.069139 [debug] [MainThread]: Command `dbt debug` failed at 14:24:01.069056 after 3.15 seconds
+[0m14:24:01.069726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70504f09b770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70504da7fad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70504e3626f0>]}
+[0m14:24:01.070333 [debug] [MainThread]: Flushing usage events
+[0m14:24:01.481121 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:24:46.547646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd710305df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd710584560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd7105692b0>]}
+
+
+============================== 14:24:46.556670 | 1d36dada-c927-4497-a03b-975f2d6c6177 ==============================
+[0m14:24:46.556670 [info ] [MainThread]: Running with dbt=1.11.11
+[0m14:24:46.557626 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'log_path': 'logs', 'profiles_dir': '/home/yogiyoh/.dbt', 'write_json': 'True', 'log_cache_events': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'partial_parse': 'True', 'no_print': 'None', 'warn_error': 'None', 'static_parser': 'True', 'use_colors': 'True', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'version_check': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None'}
+[0m14:24:46.737652 [info ] [MainThread]: dbt version: 1.11.11
+[0m14:24:46.738393 [info ] [MainThread]: python version: 3.12.13
+[0m14:24:46.738941 [info ] [MainThread]: python path: /mnt/c/Users/15108/Downloads/news/.venv/bin/python3
+[0m14:24:46.739651 [info ] [MainThread]: os info: Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m14:24:49.564836 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m14:24:49.565756 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m14:24:49.566412 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m14:24:49.825220 [info ] [MainThread]: Using profiles dir at /home/yogiyoh/.dbt
+[0m14:24:49.826122 [info ] [MainThread]: Using profiles.yml file at /home/yogiyoh/.dbt/profiles.yml
+[0m14:24:49.826707 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/15108/Downloads/news/dbt_project.yml
+[0m14:24:49.827292 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m14:24:49.828146 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 3.3365223, "process_in_blocks": "41673", "process_kernel_time": 1.343118, "process_mem_max_rss": "128052", "process_out_blocks": "0", "process_user_time": 1.888089}
+[0m14:24:49.828893 [debug] [MainThread]: Command `dbt debug` failed at 14:24:49.828814 after 3.34 seconds
+[0m14:24:49.829424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd70faba7b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd70e10e690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd710073e60>]}
+[0m14:24:49.829968 [debug] [MainThread]: Flushing usage events
+[0m14:24:50.319465 [debug] [MainThread]: An error was encountered while trying to flush usage events
