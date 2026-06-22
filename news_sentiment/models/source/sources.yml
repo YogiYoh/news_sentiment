@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: SOURCE
+    database: NEWS_PIPELINE
+    schema: RAW
+    quoting:
+      identifier: true
+    tables:
+      - name: raw.bbc_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+      - name: raw.cnn_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+      - name: raw.foxnews_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+      - name: raw.guardian_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+      - name: raw.nytimes_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+      - name: raw.reuters_articles
+        loaded_at_field: '"timestamp"'
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}

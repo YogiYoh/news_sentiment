@@ -22,6 +22,8 @@ database = os.environ["database"]
 schema = os.environ["schema"]
 
 def to_table(df, table_name):
+    df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True).dt.tz_localize(None)
+
     conn = snowflake.connector.connect(
         user=user,
         password=password,
@@ -36,6 +38,7 @@ def to_table(df, table_name):
         df=df,
         table_name=table_name,
         auto_create_table=True,
+        use_logical_type=True,
     )
 
     print(f"Successfully loaded {nrows} rows.")
@@ -80,7 +83,8 @@ def extract_nytimes():
         "https://api.nytimes.com/svc/search/v2/articlesearch.json",
         params={
             "api-key": NYTIMES_KEY,
-            "q": "politics"
+            "q": "politics",
+            "sort": "newest"
         }
     )
     
