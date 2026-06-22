@@ -139,8 +139,22 @@ def extract_foxnews():
 
 
 def extract_cnn():
+    # CNN's own RSS feeds (rss.cnn.com) are abandoned and stuck serving
+    # years-old articles, so we use Google News RSS scoped to cnn.com instead.
     return extract_rss(
-        "http://rss.cnn.com/rss/cnn_allpolitics.rss", "cnn", "raw.cnn_articles"
+        "https://news.google.com/rss/search?q=site:cnn.com+politics&hl=en-US&gl=US&ceid=US:en",
+        "cnn",
+        "raw.cnn_articles",
+    )
+
+
+def extract_reuters():
+    # Reuters discontinued its public RSS feeds in 2020, so we use Google
+    # News RSS scoped to reuters.com as a stand-in feed of Reuters articles.
+    return extract_rss(
+        "https://news.google.com/rss/search?q=site:reuters.com+politics&hl=en-US&gl=US&ceid=US:en",
+        "reuters",
+        "raw.reuters_articles",
     )
 
 if __name__ == "__main__":
@@ -149,8 +163,10 @@ if __name__ == "__main__":
     bbc_df = extract_bbc()
     foxnews_df = extract_foxnews()
     cnn_df = extract_cnn()
+    reuters_df = extract_reuters()
 
     combined = pd.concat(
-        [guardian_df, nytimes_df, bbc_df, foxnews_df, cnn_df], ignore_index=True
+        [guardian_df, nytimes_df, bbc_df, foxnews_df, cnn_df, reuters_df],
+        ignore_index=True,
     )
     print(combined.shape)

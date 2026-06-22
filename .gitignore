@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+
+# DBT
+news_sentiment/profiles.yml
+.env
