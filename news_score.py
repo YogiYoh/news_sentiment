@@ -66,7 +66,7 @@ def to_table(df, table_name):
     print(f"Successfully loaded {nrows} rows.")
     conn.close()
 
-def fetch_table(table_name):
+def fetch_table(table_name1, table_name2=None):
     conn = snowflake.connector.connect(
         user=user,
         password=password,
@@ -77,18 +77,23 @@ def fetch_table(table_name):
     )
 
     cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM {table_name}")
-
+    try:
+        cursor.execute(f"""
+            SELECT s.* FROM {table_name1} s
+            LEFT JOIN {table_name2} a ON s."link" = a."link"
+            WHERE a."link" IS NULL
+        """)
+    except Exception:
+        cursor.execute(f"SELECT * FROM {table_name1}")
+    
     df = cursor.fetch_pandas_all()  
     cursor.close()
     conn.close()
     
     return df
 
-
-
 if __name__ == "__main__":
-    df = fetch_table("SILVER.SILVER_ARTICLES")
+    df = fetch_table("SILVER.SILVER_ARTICLES", "ARTICLE_SENTIMENT")
 
     results = []
     for _, row in df.iterrows():
