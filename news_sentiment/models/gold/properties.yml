@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: gold_articles_scored
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+          - not_null
+      - name: '"source"'
+        data_tests:
+          - not_null
+      - name: '"timestamp"'
+        data_tests:
+          - not_null
+      - name: '"sentiment_score"'
+        data_tests:
+          - not_null

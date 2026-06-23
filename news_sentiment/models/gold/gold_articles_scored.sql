@@ -1,0 +1,10 @@
+SELECT
+    s."link",
+    s."headline",
+    s."body",
+    s."source",
+    s."timestamp",
+    sc."sentiment_score",
+    sc."scored_at"
+FROM {{ ref('silver_articles') }} s
+JOIN RAW.ARTICLE_SENTIMENT sc ON s."link" = sc."link"
