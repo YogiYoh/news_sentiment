@@ -12,4 +12,7 @@ wheels/
 
 # DBT
 news_sentiment/profiles.yml
+news_sentiment/target/
+news_sentiment/dbt_packages/
+logs/
 .env

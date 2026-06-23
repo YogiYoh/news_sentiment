@@ -5,8 +5,7 @@
     )
 }}
 
-
-SELECT * FROM {{source('SOURCE', 'raw.cnn_articles')}}
+SELECT * FROM {{source('SOURCE', 'raw.npr_articles')}}
 
 {% if is_incremental() %}
     WHERE "timestamp" > (SELECT MAX("timestamp") FROM {{this}})

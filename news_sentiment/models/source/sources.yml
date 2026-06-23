@@ -32,7 +32,7 @@ sources:
         freshness:
           warn_after: {count: 24, period: hour}
           error_after: {count: 48, period: hour}
-      - name: raw.reuters_articles
+      - name: raw.npr_articles
         loaded_at_field: '"timestamp"'
         freshness:
           warn_after: {count: 24, period: hour}

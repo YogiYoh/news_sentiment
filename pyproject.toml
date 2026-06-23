@@ -8,9 +8,11 @@ dependencies = [
     "dbt-core>=1.11.11",
     "dbt-snowflake>=1.11.5",
     "feedparser>=6.0.12",
+    "googlenewsdecoder>=0.1.7",
     "pandas>=2.1.2,<3.0.0",
     "protobuf>=6.0,<7.0",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
     "snowflake-connector-python[pandas]>=4.6.0",
+    "trafilatura>=2.1.0",
 ]
