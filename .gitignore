@@ -14,5 +14,12 @@ wheels/
 news_sentiment/profiles.yml
 news_sentiment/target/
 news_sentiment/dbt_packages/
+news_sentiment/logs/
 logs/
+
+# DuckDB
+*.duckdb
+*.db
+
+# Secrets
 .env
