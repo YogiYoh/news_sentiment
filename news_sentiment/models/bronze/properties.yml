@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  - name: bronze_BBC
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
+  - name: bronze_CNN
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
+  - name: bronze_FOX
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
+  - name: bronze_GUARD
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
+  - name: bronze_NPR
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
+  - name: bronze_NYT
+    columns:
+      - name: '"link"'
+        data_tests:
+          - unique
+          - not_null
+      - name: '"headline"'
+        data_tests:
+            - not_null
+      - name: '"source"'
+        data_tests:
+            - not_null
+      - name: '"timestamp"'
+        data_tests:
+            - not_null
