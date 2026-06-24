@@ -12,7 +12,9 @@ models:
             - not_null
       - name: '"source"'
         data_tests:
-            - not_null
+          - not_null
+          - accepted_values:
+              values: ['cnn', 'bbc', 'foxnews', 'npr', 'guardian', 'nytimes']
       - name: '"timestamp"'
         data_tests:
             - not_null
