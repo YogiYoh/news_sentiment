@@ -13,9 +13,41 @@ models:
       - name: '"source"'
         data_tests:
           - not_null
+          - accepted_values:
+              values: ['cnn', 'bbc', 'foxnews', 'npr', 'guardian', 'nytimes']
       - name: '"timestamp"'
         data_tests:
           - not_null
       - name: '"sentiment_score"'
+        data_tests:
+          - not_null
+  - name: gold_sentiment_by_source_daily
+    columns:
+      - name: '"source"'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['cnn', 'bbc', 'foxnews', 'npr', 'guardian', 'nytimes']
+      - name: article_date
+        data_tests:
+          - not_null
+      - name: avg_sentiment_score
+        data_tests:
+          - not_null
+      - name: total_articles
+        data_tests:
+          - not_null
+  - name: gold_sentiment_total
+    columns:
+      - name: '"source"'
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['cnn', 'bbc', 'foxnews', 'npr', 'guardian', 'nytimes']
+      - name: avg_sentiment_score
+        data_tests:
+          - not_null
+      - name: total_articles
         data_tests:
           - not_null

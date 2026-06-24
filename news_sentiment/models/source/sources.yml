@@ -37,3 +37,4 @@ sources:
         freshness:
           warn_after: {count: 24, period: hour}
           error_after: {count: 48, period: hour}
+      - name: ARTICLE_SENTIMENT
