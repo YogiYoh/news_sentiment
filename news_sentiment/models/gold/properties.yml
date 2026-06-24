@@ -7,6 +7,9 @@ models:
         data_tests:
           - unique
           - not_null
+          - relationships:
+              to: ref('silver_articles')
+              field: '"link"'
       - name: '"headline"'
         data_tests:
           - not_null
@@ -21,6 +24,9 @@ models:
       - name: '"sentiment_score"'
         data_tests:
           - not_null
+          - is_between:
+              min_value: -1.0
+              max_value: 1.0
   - name: gold_sentiment_by_source_daily
     columns:
       - name: '"source"'
@@ -34,9 +40,13 @@ models:
       - name: avg_sentiment_score
         data_tests:
           - not_null
+          - is_between:
+              min_value: -1.0
+              max_value: 1.0
       - name: total_articles
         data_tests:
           - not_null
+          - is_positive
   - name: gold_sentiment_total
     columns:
       - name: '"source"'
@@ -48,6 +58,10 @@ models:
       - name: avg_sentiment_score
         data_tests:
           - not_null
+          - is_between:
+              min_value: -1.0
+              max_value: 1.0
       - name: total_articles
         data_tests:
           - not_null
+          - is_positive
