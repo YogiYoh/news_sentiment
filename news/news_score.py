@@ -92,7 +92,7 @@ def fetch_table(table_name1, table_name2=None):
     
     return df
 
-if __name__ == "__main__":
+def score():
     df = fetch_table("SILVER.SILVER_ARTICLES", "ARTICLE_SENTIMENT")
 
     results = []
@@ -115,3 +115,7 @@ if __name__ == "__main__":
         print("No articles scored successfully.")
     else:
         to_table(scores_df, "ARTICLE_SENTIMENT")
+
+
+if __name__ == "__main__":
+    score()

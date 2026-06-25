@@ -21,5 +21,6 @@ logs/
 *.duckdb
 *.db
 
-# Secrets
+# Secrets / local env
 .env
+.envrc
