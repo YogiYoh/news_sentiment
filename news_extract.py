@@ -1,4 +1,6 @@
 import os
+import time
+import html
 import requests
 import feedparser
 import trafilatura
@@ -80,34 +82,49 @@ def extract_guardian():
     
     return df
 
-def extract_nytimes():
-    response = requests.get(
-        "https://api.nytimes.com/svc/search/v2/articlesearch.json",
-        params={
-            "api-key": NYTIMES_KEY,
-            "q": "politics",
-            "sort": "newest"
-        }
-    )
-    
-    response.raise_for_status()
-    
-    data = response.json()
-    data_json = response.json()
-    
-    df = pd.json_normalize(data_json["response"]["docs"])
-    
+def extract_nytimes(target=100):
+    results = []
+    page = 0
+
+    while len(results) < target:
+        response = requests.get(
+            "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+            params={
+                "api-key": NYTIMES_KEY,
+                "q": "politics",
+                "sort": "newest",
+                "page": page,
+            }
+        )
+        if response.status_code == 429:
+            print("Rate limited by NYT, waiting 60s...")
+            time.sleep(60)
+            continue
+        response.raise_for_status()
+        docs = response.json()["response"]["docs"]
+
+        if not docs:
+            break
+        results.extend(docs)
+        page += 1
+        time.sleep(12)
+
+    df = pd.json_normalize(results[:target])
     df = df.rename(columns={
         "headline.main": "headline",
         "web_url": "link",
-        "abstract": "body",
         "pub_date": "timestamp",
     })
+    # abstract is often empty; fall back to lead_paragraph when it is
+    df["body"] = df["abstract"].where(
+        df["abstract"].str.strip().ne(""), df.get("lead_paragraph", "")
+    )
     df["source"] = "nytimes"
     df = df[["headline", "link", "body", "timestamp", "source"]]
+    df = df[df["body"].str.strip().ne("")]  # drop rows with no usable body
 
     print(df.head())
-    
+
     to_table(df, "raw.nytimes_articles")
     
     return df
@@ -124,6 +141,7 @@ def extract_rss(url, source_name, table_name):
     })
     df["source"] = source_name
     df = df[["headline", "link", "body", "timestamp", "source"]]
+    df["body"] = df["body"].apply(lambda x: html.unescape(x) if isinstance(x, str) else x)
 
     print(df.head())
 
